@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking Gauss-Newton for learning over-parameterized models – Pierre Wolinski</title>
+  <meta name="description" content="This work studies Gauss-Newton dynamics for over-parameterized one-hidden-layer networks in the mean-field regime. It proves global convergence of…">
+  <link rel="canonical" href="https://pierre-wolinski.fr/papers/rethinking-gauss-newton.html">
+
+  <!-- Google Scholar (Highwire Press tags) -->
+  <meta name="citation_title" content="Rethinking Gauss-Newton for learning over-parameterized models">
+  <meta name="citation_author" content="Arbel, Michael">
+  <meta name="citation_author" content="Ménégaux, Romain">
+  <meta name="citation_author" content="Wolinski, Pierre">
+  <meta name="citation_publication_date" content="2023">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems 36 (NeurIPS 2023)">
+  <meta name="citation_publisher" content="Curran Associates, Inc.">
+  <meta name="citation_firstpage" content="33379">
+  <meta name="citation_lastpage" content="33402">
+  <meta name="citation_arxiv_id" content="2302.02904">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2302.02904">
+  <meta name="citation_abstract_html_url" content="https://pierre-wolinski.fr/papers/rethinking-gauss-newton.html">
+
+  <!-- schema.org -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Rethinking Gauss-Newton for learning over-parameterized models",
+  "name": "Rethinking Gauss-Newton for learning over-parameterized models",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Michael Arbel"
+    },
+    {
+      "@type": "Person",
+      "name": "Romain Ménégaux"
+    },
+    {
+      "@id": "https://pierre-wolinski.fr/#person",
+      "@type": "Person",
+      "name": "Pierre Wolinski",
+      "url": "https://pierre-wolinski.fr/"
+    }
+  ],
+  "datePublished": "2023",
+  "url": "https://pierre-wolinski.fr/papers/rethinking-gauss-newton.html",
+  "abstract": "This work studies the global convergence and implicit bias of Gauss Newton's (GN) when optimizing over-parameterized one-hidden layer networks in the mean-field regime. We first establish a global convergence result for GN in the continuous-time limit exhibiting a faster convergence rate compared to GD due to improved conditioning. We then perform an empirical study on a synthetic regression task to investigate the implicit bias of GN's method. While GN is consistently faster than GD in finding a global optimum, the learned model generalizes well on test data when starting from random initial weights with a small variance and using a small step size to slow down convergence. Specifically, our study shows that such a setting results in a hidden learning phenomenon, where the dynamics are able to recover features with good generalization properties despite the model having sub-optimal training and test performances due to an under-optimized linear layer. This study exhibits a trade-off between the convergence speed of GN and the generalization ability of the learned solution.",
+  "sameAs": [
+    "https://arxiv.org/abs/2302.02904",
+    "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6a14c7f9fb3f42645cfa6bd5aa446819-Abstract-Conference.html"
+  ],
+  "isPartOf": {
+    "@type": "PublicationEvent",
+    "name": "Advances in Neural Information Processing Systems 36 (NeurIPS 2023)"
+  }
+}
+  </script>
+
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.55; color: #222; background: #fff; }
+    h1 { font-size: 1.6rem; line-height: 1.3; margin-bottom: .4rem; }
+    .authors { font-size: 1.05rem; margin: .2rem 0; }
+    .venue { font-style: italic; margin: .2rem 0 .8rem; }
+    .note { font-size: .9rem; color: #555; }
+    pre { background: #f5f5f5; padding: .8rem; overflow-x: auto; font-size: .85rem; }
+    footer { margin-top: 2.5rem; font-size: .9rem; }
+    a { color: #1a4f8b; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Rethinking Gauss-Newton for learning over-parameterized models</h1>
+    <p class="authors">Michael Arbel, Romain Ménégaux, <a href="https://pierre-wolinski.fr/">Pierre Wolinski</a></p>
+    <p class="venue">NeurIPS 2023</p>
+    <p class="links"><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/6a14c7f9fb3f42645cfa6bd5aa446819-Abstract-Conference.html">Proceedings</a> · <a href="https://arxiv.org/abs/2302.02904">arXiv</a> · <a href="https://arxiv.org/pdf/2302.02904">PDF</a></p>
+    <p class="note">Romain Ménégaux and Pierre Wolinski contributed equally.</p>
+
+    <h2>Abstract</h2>
+    <!-- Résumé rédigé pour cette page : remplacez-le de préférence par le résumé officiel de l'article. -->
+    <p>This work studies the global convergence and implicit bias of Gauss Newton's (GN) when optimizing over-parameterized one-hidden layer networks in the mean-field regime. We first establish a global convergence result for GN in the continuous-time limit exhibiting a faster convergence rate compared to GD due to improved conditioning. We then perform an empirical study on a synthetic regression task to investigate the implicit bias of GN's method. While GN is consistently faster than GD in finding a global optimum, the learned model generalizes well on test data when starting from random initial weights with a small variance and using a small step size to slow down convergence. Specifically, our study shows that such a setting results in a hidden learning phenomenon, where the dynamics are able to recover features with good generalization properties despite the model having sub-optimal training and test performances due to an under-optimized linear layer. This study exhibits a trade-off between the convergence speed of GN and the generalization ability of the learned solution.</p>
+
+    <h2>BibTeX</h2>
+    <pre>@inproceedings{arbel2023rethinking,
+  title     = {Rethinking Gauss-Newton for learning over-parameterized models},
+  author    = {Arbel, Michael and Ménégaux, Romain and Wolinski, Pierre},
+  year      = {2023},
+  booktitle = {Advances in Neural Information Processing Systems 36 (NeurIPS 2023)},
+  pages     = {33379--33402},
+  publisher = {Curran Associates, Inc.},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/6a14c7f9fb3f42645cfa6bd5aa446819-Abstract-Conference.html}
+}</pre>
+  </main>
+  <footer><a href="https://pierre-wolinski.fr/">← Pierre Wolinski – homepage</a></footer>
+</body>
+</html>

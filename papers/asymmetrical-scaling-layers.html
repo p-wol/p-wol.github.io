@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asymmetrical Scaling Layers for Stable Network Pruning – Pierre Wolinski</title>
+  <meta name="description" content="This work introduces scaling layers inserted before each layer of a network so that training dynamics remain stable as the width tends to infinity.">
+  <link rel="canonical" href="https://pierre-wolinski.fr/papers/asymmetrical-scaling-layers.html">
+
+  <!-- Google Scholar (Highwire Press tags) -->
+  <meta name="citation_title" content="Asymmetrical Scaling Layers for Stable Network Pruning">
+  <meta name="citation_author" content="Wolinski, Pierre">
+  <meta name="citation_author" content="Charpiat, Guillaume">
+  <meta name="citation_author" content="Ollivier, Yann">
+  <meta name="citation_publication_date" content="2020">
+  <meta name="citation_pdf_url" content="https://hal.science/hal-05524815/document">
+  <meta name="citation_abstract_html_url" content="https://pierre-wolinski.fr/papers/asymmetrical-scaling-layers.html">
+
+  <!-- schema.org -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Asymmetrical Scaling Layers for Stable Network Pruning",
+  "name": "Asymmetrical Scaling Layers for Stable Network Pruning",
+  "author": [
+    {
+      "@id": "https://pierre-wolinski.fr/#person",
+      "@type": "Person",
+      "name": "Pierre Wolinski",
+      "url": "https://pierre-wolinski.fr/"
+    },
+    {
+      "@type": "Person",
+      "name": "Guillaume Charpiat"
+    },
+    {
+      "@type": "Person",
+      "name": "Yann Ollivier"
+    }
+  ],
+  "datePublished": "2020",
+  "url": "https://pierre-wolinski.fr/papers/asymmetrical-scaling-layers.html",
+  "abstract": "We propose a new training setup, called ScaLa, and a new pruning algorithm based on it, called ScaLP. The new training setup ScaLa is designed to make standard Stochastic Gradient Descent resilient to layer width changes. It consists in adding a fixed well-chosen scaling layer before each linear or convolutional layer. This results in an overall learning behavior that is more independent of the layer widths, especially with respect to optimal learning rates, which stay close to 1. Beyond the usual choice of scaling each input by the factor 1/ √ #fan-in, we also propose a family of asymmetric scaling factors: this promotes learning some neurons faster than others. The pruning algorithm ScaLP is a combination of ScaLa with asymmetrical scaling, and weight penalties. With ScaLP, the nal pruned architecture is roughly independent of the layer widths in the initial network.",
+  "sameAs": [
+    "https://hal.science/hal-05524815"
+  ]
+}
+  </script>
+
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.55; color: #222; background: #fff; }
+    h1 { font-size: 1.6rem; line-height: 1.3; margin-bottom: .4rem; }
+    .authors { font-size: 1.05rem; margin: .2rem 0; }
+    .venue { font-style: italic; margin: .2rem 0 .8rem; }
+    .note { font-size: .9rem; color: #555; }
+    pre { background: #f5f5f5; padding: .8rem; overflow-x: auto; font-size: .85rem; }
+    footer { margin-top: 2.5rem; font-size: .9rem; }
+    a { color: #1a4f8b; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Asymmetrical Scaling Layers for Stable Network Pruning</h1>
+    <p class="authors"><a href="https://pierre-wolinski.fr/">Pierre Wolinski</a>, Guillaume Charpiat, Yann Ollivier</p>
+    <p class="venue">Draft, 2020</p>
+    <p class="links"><a href="https://hal.science/hal-05524815">HAL</a></p>
+
+    <h2>Abstract</h2>
+    <p>We propose a new training setup, called ScaLa, and a new pruning algorithm based on it, called ScaLP. The new training setup ScaLa is designed to make standard Stochastic Gradient Descent resilient to layer width changes. It consists in adding a fixed well-chosen scaling layer before each linear or convolutional layer. This results in an overall learning behavior that is more independent of the layer widths, especially with respect to optimal learning rates, which stay close to 1. Beyond the usual choice of scaling each input by the factor 1/ √ #fan-in, we also propose a family of asymmetric scaling factors: this promotes learning some neurons faster than others. The pruning algorithm ScaLP is a combination of ScaLa with asymmetrical scaling, and weight penalties. With ScaLP, the nal pruned architecture is roughly independent of the layer widths in the initial network.</p>
+
+    <h2>BibTeX</h2>
+    <pre>@misc{wolinski2020asymmetrical,
+  title     = {Asymmetrical Scaling Layers for Stable Network Pruning},
+  author    = {Wolinski, Pierre and Charpiat, Guillaume and Ollivier, Yann},
+  year      = {2020},
+  url       = {https://hal.science/hal-05524815}
+}</pre>
+  </main>
+  <footer><a href="https://pierre-wolinski.fr/">← Pierre Wolinski – homepage</a></footer>
+</body>
+</html>
