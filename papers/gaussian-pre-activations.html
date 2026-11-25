@@ -71,32 +71,16 @@
     <p class="venue">TMLR 2025</p>
     <p class="links"><a href="https://openreview.net/forum?id=goe6fv6iSh">OpenReview</a> · <a href="https://arxiv.org/abs/2205.12379">arXiv</a> · <a href="https://arxiv.org/pdf/2205.12379">PDF</a> · <a href="https://github.com/p-wol/gaussian-preact">Code</a></p>
 
-    <!-- BROUILLON tiré du résumé officiel : à réécrire avec tes mots (2–3 phrases, sans jargon inutile). -->
     <div class="tldr">
       <p><strong>In short.</strong> Most initialization schemes assume that pre-activations are Gaussian, which is only justified in the infinite-width limit. We construct activation functions and weight distributions for which the pre-activations are Gaussian at every layer, even in narrow networks, and use them to test whether Gaussian pre-activations are actually desirable at initialization.</p>
     </div>
 
     <h2>Main contributions</h2>
-    <!-- BROUILLON tiré du résumé officiel : à ajuster, et à préciser là où le résumé reste vague (par ex. la réponse à la question finale). -->
     <ul>
       <li>A family of pairs (activation function, initialization distribution) that keep the pre-activations exactly Gaussian throughout the depth, whatever the width.</li>
       <li>A set of constraints that a network must satisfy to ensure Gaussian pre-activations.</li>
       <li>A critical review of the Edge of Chaos line of work.</li>
     </ul>
-
-    <!-- FIGURE CLÉ : déposer l'image dans papers/img/ puis décommenter.
-    <figure>
-      <img src="img/gaussian-pre-activations.png" width="1200" height="630" loading="lazy"
-           alt="[Décrire ce que montre la figure, en une phrase factuelle]">
-      <figcaption>[Légende : ce qu'il faut retenir de la figure, en une ou deux phrases.]</figcaption>
-    </figure>
-    -->
-
-    <!-- PARAGRAPHE PERSONNEL (3–5 phrases, à écrire toi-même) : pourquoi cette question, ce qui surprend
-         dans le résultat, ce que l'article ne dit pas encore, où la piste se poursuit.
-    <h2>Why this paper</h2>
-    <p>…</p>
-    -->
 
     <h2>Abstract</h2>
     <p>The study of feature propagation at initialization in neural networks lies at the root of numerous initialization designs. An assumption very commonly made in the field states that the pre-activations are Gaussian. Although this convenient Gaussian hypothesis can be justified when the number of neurons per layer tends to infinity, it is challenged by both theoretical and experimental works for finite-width neural networks. Our major contribution is to construct a family of pairs of activation functions and initialization distributions that ensure that the pre-activations remain Gaussian throughout the network’s depth, even in narrow neural networks. In the process, we discover a set of constraints that a neural network should fulfill to ensure Gaussian pre-activations. Additionally, we provide a critical review of the claims of the Edge of Chaos line of works and build an exact Edge of Chaos analysis. We also propose a unified view on pre-activations propagation, encompassing the framework of several well-known initialization procedures. Finally, our work provides a principled framework for answering the much-debated question: is it desirable to initialize the training of a neural network whose pre-activations are ensured to be Gaussian? Our code is available on GitHub: https://github.com/p-wol/gaussian-preact/ .</p>
