@@ -18,3 +18,20 @@ ul.related li { margin-bottom: .4rem; }
 .note { font-size: .9rem; color: #555; }
 pre { background: #f5f5f5; padding: .8rem; overflow-x: auto; font-size: .85rem; }
 footer { margin-top: 2.5rem; font-size: .9rem; }
+
+/* Figures reprises des articles */
+.paper-fig { margin: 2rem 0; }
+/* Figure large : déborde de la colonne de texte sur grand écran (64rem au plus), reste dans l'écran sur téléphone. */
+.paper-fig.wide { width: min(64rem, 100vw - 2rem); margin-left: calc(50% - min(32rem, 50vw - 1rem)); }
+.paper-fig .subfigs { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem 2rem; }
+/* Sous-figures côte à côte si la place le permet ; sous-légendes alignées en bas. */
+.paper-fig .subfig { flex: 1 1 24rem; max-width: 46rem; margin: 0; display: flex; flex-direction: column; justify-content: space-between; }
+/* Sous-figure seule (ex. figure 2(b)) : pas agrandie au-delà de 34rem. */
+.paper-fig > .subfig { max-width: 34rem; margin: 0 auto; }
+.paper-fig img { width: 100%; height: auto; background: #fff; }
+.paper-fig .subfig figcaption { text-align: center; margin-top: .3rem; }
+.paper-fig > figcaption { max-width: 46rem; margin: .8rem auto 0; line-height: 1.45; }
+/* Barre au-dessus d'un symbole (ex. H barre) sans moteur de formules */
+.ov { text-decoration: overline; }
+/* aligner à gauche les longues sous-légendes */
+.paper-fig > .subfig figcaption { text-align: left; }

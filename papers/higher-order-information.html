@@ -96,6 +96,30 @@
       <li><strong>A Newton-like method regularized at order 3.</strong> The diagonal of the order-3 summary sets an anisotropic cubic regularization, in the spirit of Nesterov’s, which keeps the step under control even when the order-2 summary is not positive definite. Without regularization, the method reduces to Newton’s method when each parameter forms its own group, and to Cauchy’s steepest descent when all parameters form a single group.</li>
       <li><strong>Long-range interactions and invariance.</strong> The <var>S</var>&#8239;×&#8239;<var>S</var> matrix is dense, so the step accounts for the interactions between all groups, including distant layers, unlike block-diagonal approximations such as K&#8209;FAC. The training trajectory is invariant under any affine reparameterization of each group, as long as the direction is the gradient or a momentum.</li>
     </ul>
+    
+    <h2>Figures</h2>
+
+    <figure class="paper-fig wide" id="fig1">
+      <div class="subfigs">
+        <figure class="subfig">
+          <a href="img/higher-order-information-fig1a.svg"><img src="img/higher-order-information-fig1a.svg" width="385" height="228" loading="lazy"
+             alt="Heatmaps for LeNet on CIFAR-10: submatrices of H̄ (first row) and of its inverse (second row), weight-weight interactions at epoch 0, then weight-weight, weight-bias and bias-bias interactions at epoch 73."></a>
+          <figcaption>(a) LeNet + CIFAR10.</figcaption>
+        </figure>
+        <figure class="subfig">
+          <a href="img/higher-order-information-fig1b.svg"><img src="img/higher-order-information-fig1b.svg" width="385" height="228" loading="lazy"
+             alt="Heatmaps for VGG-11′ on CIFAR-10: submatrices of H̄ (first row) and of its inverse (second row), weight-weight interactions at epoch 0, then weight-weight, weight-bias and bias-bias interactions at epoch 4."></a>
+          <figcaption>(b) VGG-11′ + CIFAR10.</figcaption>
+        </figure>
+      </div>
+      <figcaption><strong>Fig. 1.</strong> Setup: models trained by SGD on CIFAR-10. Submatrices of the summary Hessian <b class="ov">H</b> (1st row) and its inverse <b class="ov">H</b><sup>−1</sup> (2nd row), where focus is on interactions: weight-weight, weight-bias, bias-bias of the different layers, at initialization and before best validation loss.</figcaption>
+    </figure>
+
+    <figure class="paper-fig" id="fig2b">
+      <a href="img/higher-order-information-fig2b.svg"><img src="img/higher-order-information-fig2b.svg" width="401" height="209" loading="lazy"
+         alt="Two log-scale plots of the learning rate of each layer, for LeNet (left) and VGG (right), at epochs 10, 30, 50, 70 and 90; solid lines for weights, dashed lines for biases."></a>
+      <figcaption><strong>Fig. 2.</strong> Setup: LeNet, VGG-11′ trained by SGD on CIFAR-10. The learning rates <var>η</var><sub>*</sub> given by our method are specific to each tensor of weights and tensor of biases of each layer. For each epoch <var>k</var>&nbsp;∈&nbsp;{10,&nbsp;30,&nbsp;50,&nbsp;70,&nbsp;90}, the reported value has been averaged over the epochs [<var>k</var>&nbsp;−&nbsp;10,&nbsp;<var>k</var>&nbsp;+&nbsp;9] to remove the noise.</figcaption>
+    </figure>
 
     <h2>Abstract</h2>
     <p>When training large models, such as neural networks, the full derivatives of order 2 and beyond are usually inaccessible, due to their computational cost. Therefore, among the second-order optimization methods, it is common to bypass the computation of the Hessian by using first-order information, such as the gradient of the parameters (e.g., quasi-Newton methods) or the activations (e.g., K-FAC). In this paper, we focus on the exact and explicit computation of projections of the Hessian and higher-order derivatives on well-chosen subspaces relevant for optimization. Namely, for a given partition of the set of parameters, we compute tensors that can be seen as "higher-order derivatives according to the partition", at a reasonable cost as long as the number of subsets of the partition remains small. Then, we give some examples of how these tensors can be used. First, we show how to compute a learning rate per subset of parameters, which can be used for hyperparameter tuning. Second, we show how to use these tensors at order 2 to construct an optimization method that uses information contained in the Hessian. Third, we show how to use these tensors at order 3 (information contained in the third derivative of the loss) to regularize this optimization method. The resulting training step has several interesting properties, including: it takes into account longrange interactions between the layers of the trained neural network, which is usually not the case in similar methods (e.g., K-FAC); the trajectory of the optimization is invariant under affine layer-wise reparameterization. Our code is available on GitHub: <a href="https://github.com/p-wol/GroupedNewton">https://github.com/p-wol/GroupedNewton</a>.</p>
@@ -105,8 +129,8 @@
       <li>Code (PyTorch package <code>grnewt</code>): <a href="https://github.com/p-wol/GroupedNewton">github.com/p-wol/GroupedNewton</a></li>
       <li>Tutorial notebook: <a href="https://github.com/p-wol/GroupedNewton/blob/master/Example01_basic.ipynb">Example01_basic.ipynb</a></li>
       <li>Open-access version: <a href="https://ecmlpkdd-storage.s3.eu-central-1.amazonaws.com/preprints/2025/research/preprint_ecml_pkdd_2025_research_332.pdf">ECML PKDD 2025 preprint</a></li>
-      <!-- <li>Slides: <a href="pdf/higher-order-information-slides.pdf">PDF</a> ([lieu, date de l'exposé])</li> -->
-      <!-- <li>Poster: <a href="pdf/higher-order-information-poster.pdf">PDF</a> (ECML PKDD 2025, Porto)</li> -->
+      <li>Slides: <a href="pdf/higher-order-information-slides.pdf">PDF</a> (ECML PKDD 2025)</li>
+      <li>Poster: <a href="pdf/higher-order-information-poster.pdf">PDF</a> (ECML PKDD 2025)</li>
       <!-- <li>Video: <a href="https://…">[séminaire, date]</a></li> -->
     </ul>
 
